@@ -345,7 +345,6 @@ async def delete_movie(
     response_model=MessageResponseSchema,
     responses={
         400: {"description": "Invalid input data"},
-        404: {"description": "Movie not found"}
     }
 )
 async def update_movie(
