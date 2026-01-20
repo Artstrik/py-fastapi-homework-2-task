@@ -1,5 +1,14 @@
+# schemas/__init__.py
 from schemas.movies import (
-    MovieDetailSchema,
+    MovieStatus,
+    GenreSchema,
+    ActorSchema,
+    LanguageSchema,
+    CountrySchema,
+    MovieListItemSchema,
     MovieListResponseSchema,
-    MovieListItemSchema
+    MovieDetailSchema,
+    MovieCreateSchema,
+    MovieUpdateSchema,
+    MessageResponseSchema
 )
