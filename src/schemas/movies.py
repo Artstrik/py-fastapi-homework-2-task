@@ -87,7 +87,6 @@ class MovieCreateSchema(BaseModel):
     actors: List[str]
     languages: List[str]
 
-
     @field_validator('date')
     def validate_date_not_too_far_in_future(cls, v):
         max_future_date = date.today().replace(year=date.today().year + 1)
@@ -104,7 +103,6 @@ class MovieUpdateSchema(BaseModel):
     status: Optional[MovieStatus] = None
     budget: Optional[float] = Field(None, ge=0)
     revenue: Optional[float] = Field(None, ge=0)
-
 
     @field_validator('date')
     def validate_date_not_too_far_in_future(cls, v):
