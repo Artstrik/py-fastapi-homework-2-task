@@ -87,11 +87,6 @@ class MovieCreateSchema(BaseModel):
     actors: List[str]
     languages: List[str]
 
-    @field_validator('date')
-    def validate_date_not_in_future(cls, v):
-        if v > date.today():
-            raise ValueError('Date cannot be in the future')
-        return v
 
     @field_validator('date')
     def validate_date_not_too_far_in_future(cls, v):
@@ -110,11 +105,6 @@ class MovieUpdateSchema(BaseModel):
     budget: Optional[float] = Field(None, ge=0)
     revenue: Optional[float] = Field(None, ge=0)
 
-    @field_validator('date')
-    def validate_date_not_in_future(cls, v):
-        if v and v > date.today():
-            raise ValueError('Date cannot be in the future')
-        return v
 
     @field_validator('date')
     def validate_date_not_too_far_in_future(cls, v):
